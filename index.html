@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!--SLICK SLIDER LINK -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+               'sm': '425px', // Change this value
+               'md': '768px',
+               'lg': '1024px',
+               'xl': '1280px',
+             },
+                extend: {
+                    colors: {
+                        mycolor: 'pink',
+                        menucolor: 'rgba(255,255,255,0.7)',
+                        pillscolor: '#838485'
+                    },
+                    fontFamily: {
+                        poppins: ['poppins'],
+                        roboto: ["Roboto Mono", 'monospace']
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .stroke-text {
+            /* color: black; */
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1.4px;
+            /* -webkit-text-stroke-color: black; */
+        }
+
+        .stroke-text-two {
+            /* color: black; */
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1px;
+            opacity: 0.15;
+            /* -webkit-text-stroke-color: black; */
+        }
+
+        .stroke-text-three {
+            color: #fff;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1.4px;
+            -webkit-text-stroke-color: #ffff;
+        }
+
+        .stroke-text-three:hover {
+            -webkit-text-fill-color: #fff;
+        }
+
+        ul.tabs {
+            margin: 0px;
+            padding: 40px 0px 20px 10px;
+            list-style: none;
+        }
+        .cap-content-box::before {
+    content: ".";
+    /* background: red; */
+    position: absolute;
+    left: -40px;
+    font-size: 52px;
+    padding: 10px;
+    top: -54px;
+    color: #000;
+}
+.cap-content-box::after {
+    content: "";
+    border-top: 1px dashed #d1d0d0;
+    position: absolute;
+    left: -19px;
+    width: 18px;
+    top: 13px;
+}
+        ul.tabs li {
+            background: none;
+            color: #222;
+            display: inline-block;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px dashed #000;
+            border-radius: 35px;
+        }
+
+        ul.tabs li.current {
+            background: #000;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            background: #fffd;
+            padding: 15px;
+        }
+
+        .tab-content.current {
+            display: inherit;
+        }
+        .mystyle::after {
+        content: "";
+        background: transparent;
+        border: 1px dashed #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        right: -20px;
+        top: -12px;
+        display: inline-block;
+        animation: rotateCircle 10s linear infinite;
+        }
+        span.menu-dots {
+        background: #000;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        border-radius: 0px 0px 10px 10px;
+        position: relative;
+        top: 0;
+         }
+        @keyframes rotateCircle {
+        0% {
+            transform: rotate(0);
+        }
+
+        25% {
+            transform: rotate(90deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+        .nav-circle {
+    position: absolute;
+    font-size: 33px;
+    position: absolute;
+    right: 16px;
+    margin-top: -19px;
+}
+.nav-circle::after {
+    content: ".";
+    font-size: 33px;
+}
+div#myDIV {
+    position: fixed;
+    height: 100vh;
+    width: 400px; 
+    background:#000;
+    right: 0;
+    padding: 50px 40px;
+    transition: width 2s;
+    z-index:1;
+  
+}  
+
+i.icon {
+    padding: 4px 11px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    font-size: 21px;
+    margin: 6px;
+}
+/* body {
+    background-color:  rgb(241 245 249); /* Light mode background color */
+  /*  color: #333; /* Light mode text color 
+}
+
+.dark-mode  {
+    background-color: black; /* Dark mode background color 
+    color:#fff /* Dark mode text color 
+} */
+body {
+    background-color: #f4f4f4; /* Light mode background color */
+    color: #000; /* Light mode text color */
+}
+
+.dark-mode {
+    background-color: #000; /* Dark mode background color */
+    color: #f4f4f4 !important; /* Dark mode text color */
+}
+.bg-faint{ 
+    background:#fff !important;
+}
+.bg-slate{
+    background-color: rgb(241 245 249);
+}
+.red-bg {
+    background-color: #1c1e20 !important; /* Red background color */
+    color: #fff; /* Text color */
+}
+.menu-wrapper{
+    background:rgb(0, 0, 0);
+}
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 5s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+  transition: all 0.1s ease 0s; 
+}
+
+.text_1::after, .text_2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  
+  60%, 90% {
+    width: 9em;
+  }
+}
+
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 8em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+.about-name {
+    position: absolute;
+    top: 57%;
+    background: rgba(0,0,0,0.3);
+    color:#fff;
+    border-radius: 2em;
+    backdrop-filter: blur(5px);
+    font-family: 'Roboto Mono';
+    padding: 0.5em 1em;
+    box-shadow: 0 8px 26px 0 rgba(22,24,26,0.11);
+    left: 58px;
+    font-size: 14px;
+}
+@media(max-width:425px){
+    .about-name {
+    top: 34%;
+}
+}
+</style>
+</head>
+
+<body class="bg-slate">
+    <section>
+        <div class="bg-lines">
+            <div class="bg-line-1"></div>
+            <div class="bg-line-2"></div>
+            <div class="bg-line-3"></div>
+            <div class="bg-line-4"></div>
+        </div>
+    </section>
+    <section>
+          <div class="sidebar hidden relative" id="myDIV">
+             <span><i class="ri-close-circle-fill text-2xl text-white absolute top-[15px] right-[15px]" onclick="myFunction()"></i></span>
+             <div class="sidebar-contact">
+                <p class="text-white text-base font-roboto pb-2">PHONE : </p>
+                <p class="text-white  text-2xl font-poppins font-medium">+(976) 12 34 9999</p>
+                <p class="text-white text-base font-roboto pt-5 pb-2">E-MAIL : </p>
+                <p class="text-white  text-2xl font-poppins font-medium">flatheme@gmail.com</p>
+             </div>
+             <div class="sibar-social-icons flex lg:flex text-white pt-5">
+                <i class="ri-facebook-circle-fill icon"></i>
+                <i class="ri-twitter-fill icon"></i>
+                <i class="ri-youtube-fill icon"></i>
+             </div>
+             <div>
+                <!-- <button class="text-white font-roboto text-base pt-3  hover:underline" id="bg-dark" onclick="myFunctionTwo()">Dark version</button> -->
+                <button class="text-white font-roboto text-base mt-5 hover:underline" id="theme-toggle">Dark Mode</button>
+            </div>
+          </div>
+    </section>
+    <section class="header-section" id="header">
+        <div class="container mx-auto">
+            <div class="header-wrapper flex  lg:flex lg:justify-between lg:items-start">
+                <div class="p-name py-6">
+                    <p class="sm:text-3xl lg:text-7xl font-semibold font-poppins">Christina <span class="stroke-text">Gray</span></p>
+
+                </div>
+                <div class="p-link flex lg:flex">
+                    <ul class=" flex lg:flex  font-roboto py-4">
+                        <li><a href="" class="px-2 hover:underline">FB</a></li>
+                        <li><a href="" class="px-2 hover:underline">TW</a></li>
+                        <li><a href="" class="px-2 hover:underline">IG</a></li>
+                        <li><a href="" class="px-2 hover:underline">IN</a></li>
+                    </ul>
+                    <button onclick="myFunction()">
+                        <span class="menu-dots"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-box">
+        <div class="container mx-auto">
+            <div class="main-wrapper grid lg:grid-cols-7 sm:grid-cols-1 gap-[50px]">
+                <div id="navigation" class="menu-wrapper text-menucolor sm:py-0 sm:px-2 md:px-8 md:py-7 lg:px-8 lg:py-7 font-roboto text-sm lg:col-span-2  sm:col-span-1 lg:sticky lg:top-[20px] lg:h-[450px] rounded-lg">
+                    <ul class="sm:flex lg:flex-col md:flex-col relative">
+                        <!-- <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%] sm:text-center lg:flex justify-between abc"><a href="#about">
+                                <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">ABOUT ME</span>
+                                <span class="mobile-link lg:invisible md:invisible ">A</span>
+                                <span class="nav-circle "></span>
+                            </a>
+                        </li> -->
+                        <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%]  sm:text-center   lg:flex justify-between abc"><a href="#about ">
+                                <span class="desktop-link sm:invisible lg:visible md:visible  hover:text-white" onclick="clickedLink()">ABOUT ME</span>
+                                <span class="mobile-link lg:invisible md:invisible">A</span>
+                                <span class="nav-circle"></span>
+                            </a>
+                        </li>
+                        <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%]  sm:text-center  lg:flex justify-between abc"><a href="#portfolio ">
+                            <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">PORTFOLIO</span>
+                            <span class="mobile-link lg:invisible md:invisible">P</span>
+                            <span class="nav-circle"></span>
+                        </a>
+                    </li>
+                        <li class="lg:py-4 sm:py-1  sm:w-[14%] lg:w-[100%] sm:text-center  lg:flex justify-between abc"><a href="#services">
+                                <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">SERVICES</span>
+                                <span class="mobile-link lg:invisible md:invisible">S</span>
+                                <span class="nav-circle"></span>
+                            </a>
+                        </li>
+                        <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%]   sm:text-center lg:flex justify-between abc"><a href="#testimonial">
+                                <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">TESTIMONIAL</span>
+                                <span class="mobile-link lg:invisible md:invisible">T</span>
+                                <span class="nav-circle"></span>
+                            </a>
+                        </li>
+                        <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%]  sm:text-center lg:flex justify-between abc"><a href="#resume">
+                                <span class="desktop-link sm:invisible lg:visible md:visible  hover:text-white" onclick="clickedLink()">RESUME</span>
+                                <span class="mobile-link lg:invisible md:invisible">R</span>
+                                <span class=" nav-circle"></span>
+                            </a>
+                        </li>
+                        <li class="lg:py-4 sm:py-1  sm:w-[14%] lg:w-[100%]   sm:text-center lg:flex justify-between abc"><a href="#clients">
+                            <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">Client</span>
+                            <span class="mobile-link lg:invisible md:invisible">C</span>
+                            <span class=" nav-circle"></span>
+                        </a>
+                    </li>
+                        <li class="lg:py-4 sm:py-1  sm:w-[14%] lg:w-[100%]  sm:text-center lg:flex justify-between abc"><a href="#blog">
+                                <span class="desktop-link sm:invisible lg:visible md:visible sm:invisible lg:visible md:visible hover:text-white " onclick="clickedLink()">BLOG</span>
+                                <span class="mobile-link lg:invisible md:invisible">B</span>
+                                <span class="nav-circle"></span>
+                                </a>
+                        </li>
+                        <li class="lg:py-4 sm:py-1 sm:w-[14%] lg:w-[100%]  sm:text-center lg:flex justify-between abc"><a href="#contact">
+                                <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">CONTACT</span>
+                                <span class="mobile-link lg:invisible md:invisible">C</span>
+                                <span class="nav-circle"></span>
+                            </a>
+                        </li>
+                    </ul>
+                  <div class="relative ">
+                    <p class="text-black font-bold absolute top-[20px]">HIRE ME</p>
+                    <span class="relative flex h-3 w-3 top-[23px] left-[80px]">
+                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                      </span>
+                  </div>
+                   
+                </div>
+                <div class="content-wrapper lg:col-span-5 sm:col-span-1">
+                    <div class="about-box bg-faint mb-8 rounded-lg shadow-lg   pb-10" id="about">
+                        <div class="about-wrapper grid lg:grid-cols-7 px-8 py-8 relative">
+                            <div class="about-image lg:col-span-2">
+                                <img src="img/hero-avatar.jpg" alt="" class="rounded-full">
+                            </div>
+                            <div class="about-name">
+                               <span class="text_1">HI,THERE!_</span>
+                               <span class="text_2">I'M ANKITA_</span>
+                            </div>
+                            <div class="about-content lg:col-span-5">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-10 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">ABOUT ME</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        About Me</p>
+                                    <h1 class="font-semibold sm:text-3xl lg:text-[40px] leading-tight font-poppins pt-4">UI & UX
+                                        Designer. <br>Photographer</h1>
+                                    <ul class="sm:flex-col lg:flex lg:flex-row  md:flex md:flex-row  pt-4 sm:pt-6">
+                                     <li class="p-[2px] sm:my-2">
+                                            <span
+                                                class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
+                                                    class="ri-html5-fill "></i> HTML5 & CSS3 <span
+                                                    class="lg:text-base sm:text-[12px]"> (94%)</span></span>
+                                        </li>
+                                        <li class="p-[2px] sm:my-2">
+                                            <span
+                                                class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
+                                                    class="ri-bootstrap-fill "></i> Bootstrap <span
+                                                    class="lg:text-base sm:text-[12px]" > (94%)</span></span>
+                                        </li>
+                                        <li class="p-[2px] sm:my-2">
+                                            <span
+                                                class="lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
+                                                    class="ri-search-line "></i> SEO <span
+                                                    class="lg:text-base sm:text-[12px]" > (94%)</span></span>
+                                        </li>
+                                    </ul>
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="grid lg:grid-cols-3 px-[45px] gap-5 ">
+                            <div class="counter flex lg:flex  items-center">
+                                <div class="counter-value ">
+                                    <p class="stroke-text text-6xl font-roboto font-semibold">12</p>
+                                </div>
+                                <div class="counter-text ps-2">
+                                    <p class="plus-text">+</p>
+                                    <p class="font-roboto uppercase font-medium  text-sm tracking-wider">Years
+                                        of Experience</p>
+                                </div>
+                            </div>
+                            <div class="counter flex lg:flex items-center">
+                                <div class="counter-value ">
+                                    <p class="stroke-text text-6xl font-roboto font-semibold">20</p>
+                                </div>
+                                <div class="counter-text ps-2">
+                                    <p class="plus-text">k</p>
+                                    <p class="font-roboto uppercase font-medium  text-sm tracking-wider">HOURS
+                                        OF WORKING</p>
+                                </div>
+                            </div>
+                            <div class="counter flex  lg:flex items-center">
+                                <div class="counter-value ">
+                                    <p class="stroke-text text-6xl font-roboto font-semibold">90</p>
+                                </div>
+                                <div class="counter-text ps-2">
+                                    <p class="plus-text">+</p>
+                                    <p class="font-roboto uppercase font-medium  text-sm tracking-wider">
+                                        PROJECTS DONE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="portfolio">
+                        <div class="about-wrapper px-8 py-8">
+                            <div class="about-content lg:col-span-5">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">PORTFOLIO</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        Portfolio</p>
+                                    <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">My Latest
+                                        Works</h1>
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                </div>
+
+                                <ul class="tabs lg:mt-5 lg:mb-2 ">
+                                    <li class="tab-link current font-roboto text-base" data-tab="tab-1">Show All</li>
+                                    <li class="tab-link font-roboto" data-tab="tab-2">Branding</li>
+                                    <li class="tab-link font-roboto" data-tab="tab-3">Mockup</li>
+                                </ul>
+
+                                <div id="tab-1" class="tab-content current">
+                                    <div class="img-gallery flex lg:flex-row sm:flex-col gap-4">
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-1.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out ">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Glasses Of <br>Cocktail</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-2.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    A Branch With<br> a Flower</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="img-gallery flex sm:flex-col lg:flex-row gap-4 mt-4">
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-3.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Orange Rose <br>Flower</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-4.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Green Plant on a <br> Desk</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-content">
+                                    <div class="img-gallery flex sm:flex-col lg:flex-row gap-4">
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-2.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Glasses Of <br>Cocktail</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-4.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Glasses Of <br>Cocktail</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="tab-3" class="tab-content">
+                                    <div class="img-gallery flex sm:flex-col lg:flex-row gap-4">
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-2.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Glasses Of <br>Cocktail</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="img-box-1 relative group">
+                                            <img src="img/portfolio-3.jpg" alt="" class="rounded-lg">
+                                            <div
+                                                class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                                <p
+                                                    class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
+                                                    Glasses Of <br>Cocktail</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="service-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="services">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">SERVICES</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        SERVICES</p>
+                                    <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">What I Do</h1>
+
+                                    <p class="mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                </div>
+
+                            </div>
+                            <div
+                                class="service-content-wrapper items-end border-dashed  border-b-[1px] border-slate-300  grid lg:grid-cols-7 mt-6 pt-2 pb-8">
+                                <div class="service-content-box-1 col-span-3">
+                                    <div class="counter lg:flex items-center">
+                                        <div class="counter-value ">
+                                            <p class="stroke-text text-6xl font-roboto font-semibold">01</p>
+                                        </div>
+                                        <div class="counter-text ps-2">
+                                            <p class="plus-text"><i class="ri-code-s-slash-line text-2xl"></i></p>
+                                            <p
+                                                class="font-roboto uppercase font-medium  text-sm tracking-wider">
+                                                WEB & MOBILE DEVELOPMENT</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="service-content-box-1 col-span-4">
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna</p>
+                                </div>
+
+
+                            </div>
+
+                            <div
+                                class="service-content-wrapper items-end border-dashed  border-b-[1px] border-slate-300  grid lg:grid-cols-7 mt-3 pt-2 pb-8">
+                                <div class="service-content-box-1 col-span-3">
+                                    <div class="counter lg:flex items-center">
+                                        <div class="counter-value ">
+                                            <p class="stroke-text text-6xl font-roboto font-semibold">02</p>
+                                        </div>
+                                        <div class="counter-text ps-2">
+                                            <p class="plus-text"><i class="ri-tv-2-line text-2xl"></i></p>
+                                            <p
+                                                class="font-roboto uppercase font-medium  text-sm tracking-wider">
+                                                DIGITAL MARKETING</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="service-content-box-1 col-span-4">
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna </p>
+                                </div>
+
+
+                            </div>
+
+                            <div
+                                class="service-content-wrapper items-end border-dashed  border-b-[1px] border-slate-300 grid lg:grid-cols-7 mt-3 pt-2 pb-8">
+                                <div class="service-content-box-1 col-span-3">
+                                    <div class="counter lg:flex items-center">
+                                        <div class="counter-value ">
+                                            <p class="stroke-text text-6xl font-roboto font-semibold">03</p>
+                                        </div>
+                                        <div class="counter-text ps-2">
+                                            <p class="plus-text"><i class="ri-settings-5-line text-2xl"></i></p>
+                                            <p
+                                                class="font-roboto uppercase font-medium  text-sm tracking-wider">
+                                                BRANDING & STRATEGY</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="service-content-box-1 col-span-4">
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna</p>
+                                </div>
+
+
+                            </div>
+
+                            <div
+                                class="service-content-wrapper items-end border-dashed  border-b-[1px] border-slate-300  grid lg:grid-cols-7 mt-3 pt-2 pb-8">
+                                <div class="service-content-box-1 col-span-3">
+                                    <div class="counter lg:flex items-center">
+                                        <div class="counter-value ">
+                                            <p class="stroke-text text-6xl font-roboto font-semibold">03</p>
+                                        </div>
+                                        <div class="counter-text ps-2">
+                                            <p class="plus-text"><i class="ri-user-line text-2xl"></i></p>
+                                            <p
+                                                class="font-roboto uppercase font-medium  text-sm tracking-wider">
+                                                USER TESTING & PERSONAS</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="service-content-box-1 col-span-4">
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="testimonial-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="testimonial">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">TESTIMONIAL</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        WHAT PEROPLE SAY</p>
+                                    <div class="testimonial-slider pt-8">
+                                        <div class="your-class">
+                                            <div>
+                                                <div class="author-rating">
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                </div>
+                                                <div class="author-desc">
+                                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor
+                                                        sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis
+                                                        natoque penatibus et</p>
+                                                </div>
+                                                <div class="author-wrapper lg:flex pt-4 px-2 py-2 items-end ">
+                                                    <div class="author-img px-2">
+                                                        <img src="img/testimonial-3.jpg" alt="" class="rounded-full">
+                                                    </div>
+                                                    <div class="author-details px-2">
+                                                        <p class="font-poppins text-xl font-medium">Rechard Stayers</p>
+                                                        <p class="">CTO FlaTheme</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="author-rating">
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                </div>
+                                                <div class="author-desc">
+                                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor
+                                                        sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis
+                                                        natoque penatibus et</p>
+                                                </div>
+                                                <div class="author-wrapper pt-4 lg:flex px-2 py-2 items-end ">
+                                                    <div class="author-img px-2">
+                                                        <img src="img/testimonial-1.jpg" alt="" class="rounded-full">
+                                                    </div>
+                                                    <div class="author-details px-2">
+                                                        <p class="font-poppins text-xl font-medium">Rechard Stayers</p>
+                                                        <p class="">CTO FlaTheme</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="author-rating">
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                </div>
+                                                <div class="author-desc">
+                                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor
+                                                        sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis
+                                                        natoque penatibus et</p>
+                                                </div>
+                                                <div class="author-wrapper pt-4 lg:flex px-2 py-2 items-end ">
+                                                    <div class="author-img px-2">
+                                                        <img src="img/testimonial-2.jpg" alt="" class="rounded-full">
+                                                    </div>
+                                                    <div class="author-details px-2">
+                                                        <p class="font-poppins text-xl font-medium">Rechard Stayers</p>
+                                                        <p class="">CTO FlaTheme</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="author-rating">
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                    <i class="ri-star-fill text-yellow-400"></i>
+                                                </div>
+                                                <div class="author-desc">
+                                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor
+                                                        sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis
+                                                        natoque penatibus et</p>
+                                                </div>
+                                                <div class="author-wrapper pt-4 lg:flex px-2 py-2 items-end ">
+                                                    <div class="author-img px-2">
+                                                        <img src="img/testimonial-3.jpg" alt="" class="rounded-full">
+                                                    </div>
+                                                    <div class="author-details px-2">
+                                                        <p class="font-poppins text-xl font-medium">Rechard Stayers</p>
+                                                        <p class="">CTO FlaTheme</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="Resume-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="resume">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">RESUME</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        RESUME</p>
+                                    <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">Education &
+                                        Experience</h1>
+
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                    <div class="education-wrapper grid lg:grid-cols-6 mt-[45px]">
+                                        <div class="edu-degree lg:col-span-3">
+                                            <div
+                                                class="main-degree-wrapper pl-6  border-dashed border-l-[1px] border-slate-300">
+                                                <div class="cap-box mb-4">
+                                                    <i class="ri-graduation-cap-line text-3xl"></i>
+                                                </div>
+                                                <div class="degree-box mb-8 relative">
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Bachelor
+                                                            Degree of Business</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                                <div class="degree-box mb-8 relative">
+
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Master
+                                                            Degree of Design</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                                <div class="degree-box relative">
+
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Bachelor
+                                                            Degree of Business</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="edu-work-exp lg:col-span-3 pl-6 sm:pl-0 ">
+                                            <div
+                                                class="main-degree-wrapper pl-6  border-dashed border-l-[1px] border-slate-300">
+                                                <div class="cap-box mb-4">
+                                                    <i class="ri-briefcase-line text-3xl"></i>
+                                                </div>
+                                                <div class="degree-box mb-8 relative">
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Director
+                                                            of Operations</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                                <div class="degree-box mb-8 relative">
+
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Senior
+                                                            Designer</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                                <div class="degree-box relative">
+
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            2020 - 2023 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">UI & UX
+                                                            Designer</h5>
+                                                        <p class="text-base font-sans  mt-2">@ University
+                                                            of Business</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="client-logo-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="clients">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">CLIENTS</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">// My
+                                        AWESOME CLIENTS</p>
+                                    <div class="testimonial-slider pt-8">
+                                        <div class="client-slider ">
+                                            <div>
+                                                <img src="./img/client-1.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100 ">
+                                            </div>
+                                            <div>
+                                                <img src="./img/client-2.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100">
+                                            </div>
+                                            <div>
+                                                <img src="./img/client-3.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100">
+                                            </div>
+                                            <div>
+                                                <img src="./img/client-4.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100">
+                                            </div>
+                                            <div>
+                                                <img src="./img/client-5.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100">
+                                            </div>
+                                            <div>
+                                                <img src="./img/client-1.png" alt="" srcset=""
+                                                    class="h-auto max-w-[86%] opacity-50 hover:opacity-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="blog-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="blog">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">BLOG</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
+                                        BLOG</p>
+                                    <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">Latest Blog Posts</h1>
+
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                    <div class="blog-warpper mt-8">
+                                        <div class="blog-post grid lg:grid-cols-8 gap-8 items-center">
+                                         <div class="blog-img lg:col-span-3">
+                                            <img src="img/blog-post-1.jpg" alt="" class="rounded-lg">
+                                         </div>
+                                         <div class="blog-content lg:col-span-5">
+                                            <p class=" font-sans text-xl">Posted on Aug 28</p>
+                                            <h2 class="sm:text-[24px] lg:text-[25px] font-poppins font-semibold mt-3">4 years of working from home</h2>
+                                            <button class="border border-dashed border-black rounded-full mt-3 px-3 py-2 text-base font-roboto">Read More</button>
+                                         </div>
+                                        </div>
+
+                                        <div class="blog-post grid lg:grid-cols-8 mt-4 gap-8 items-center">
+                                            <div class="blog-img lg:col-span-3">
+                                               <img src="img/blog-post-2.jpg" alt="" class="rounded-lg">
+                                            </div>
+                                            <div class="blog-content lg:col-span-5">
+                                               <p class=" font-sans text-xl">Posted on Aug 28</p>
+                                               <h2 class="sm:text-[24px] lg:text-[25px] font-poppins font-semibold mt-3">Importance of outdoor times
+                                                
+                                                </h2>
+                                               <button class="border border-dashed border-black rounded-full mt-3 px-3 py-2 text-base font-roboto">Read More</button>
+                                            </div>
+                                           </div>
+
+                                           <div class="blog-post grid lg:grid-cols-8  mt-4 gap-8 items-center">
+                                            <div class="blog-img lg:col-span-3">
+                                               <img src="img/blog-post-3.jpg" alt="" class="rounded-lg">
+                                            </div>
+                                            <div class="blog-content lg:col-span-5">
+                                               <p class=" font-sans text-xl">Posted on Aug 28</p>
+                                               <h2 class=" sm:text-[24px] lg:text-[25px] font-poppins font-semibold mt-3">Fun drinks to make at home</h2>
+                                               <button class="border border-dashed border-black rounded-full mt-3 px-3 py-2 text-base font-roboto">Read More</button>
+                                            </div>
+                                           </div>
+
+
+                                           <div class="blog-post grid lg:grid-cols-8   mt-4 gap-8 items-center">
+                                            <div class="blog-img lg:col-span-3">
+                                               <img src="img/blog-post-4.jpg" alt="" class="rounded-lg">
+                                            </div>
+                                            <div class="blog-content lg:col-span-5">
+                                               <p class=" font-sans text-xl">Posted on Aug 28</p>
+                                               <h2 class="sm:text-[24px] lg:text-[25px] font-poppins font-semibold mt-3">Benefits of eating health</h2>
+                                               <button class="border border-dashed border-black rounded-full mt-3 px-3 py-2 text-base font-roboto">Read More</button>
+                                            </div>
+                                           </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="contact-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="contact">
+                        <div class="about-wrapper  px-8 py-8">
+                            <div class="about-content">
+                                <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
+                                    <p class="stroke-text-two text-4xl font-poppins uppercase font-bold">CONTACT</p>
+                                    <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">// GET IN TOUCH</p>
+                                    <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">Lets Connect</h1>
+
+                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
+                                        consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                    <div class="contact-warpper  mt-8">
+                                        <ul class=" pt-4 mb-8">
+                                            <li class="p-[2px] mb-5">
+                                                <span
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Phone: +976 12 34 99 99</span>
+                                            </li>
+                                            <li class="p-[2px] mb-5">
+                                                <span
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "></i> Email: flatheme@gmail.com</span>
+                                            </li>
+                                            <li class="p-[2px] mb-5">
+                                                <span
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Address: 121 King St, Melbourne VIC 3000 </span>
+                                            </li>
+                                        </ul>
+                                        <div class="contact-form mt-9">
+                                            <form action="">
+                                                <div class="contact-box-wrapper">
+                                                    <div class="box grid lg:grid-cols-6 gap-3 mb-7">
+                                                        <div class="col-span-3 ">
+                                                            <label for="" class="">Name</label>
+                                                            <input type="text" class="border-b border-dashed border-slate-300 w-[100%]">
+                                                          
+                                                        </div>
+                                                        <div class="col-span-3">
+                                                            <label for="" class="">E-Mail</label>
+                                                            <input type="email" class="border-b border-dashed border-slate-300 w-[100%]">
+                                                        </div>
+                                                    </div>
+                                                    <label for="" class="">Subject</label>
+                                                    <input type="text" name="" id="" class="mb-3 border-b border-dashed border-inherit w-[100%]"><br>
+                                                    <textarea name="" id="" cols="30" rows="10" class="  border-b border-dashed border-slate-300 w-[100%]">Message</textarea>
+                                                    <button class="mt-8  bg-black text-white text-base rounded-full font-roboto py-2 px-4">Send Message</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                       
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d60542.616744957035!2d73.75502626497!3d18.487574826761726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m3!3m2!1d18.4875793!2d73.7963116!4m0!5e0!3m2!1sen!2sin!4v1713955229240!5m2!1sen!2sin" width="100%" height="350" class="mb-9 rounded-lg shadow-lg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <script>
+        $(document).ready(function () {
+
+            $('ul.tabs li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.your-class').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                arrows: true,
+                responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.client-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                arrows: true,
+                responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+            });
+        });
+    </script>
+
+    <script>
+        // Smooth scrolling to anchor links with custom offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevents the default behavior of link click
+
+                // Get the target section based on the href attribute
+                const target = document.querySelector(this.getAttribute('href'));
+
+                // Define the offset for the top margin
+                const offset = 20;
+
+
+                // Calculate the target position (top position relative to the viewport)
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+                // Scroll to the target position with the desired offset
+                window.scrollTo({
+                    top: targetPosition - offset,
+                    behavior: 'smooth' // Enable smooth scrolling behavior
+                });
+            });
+        });
+    </script>
+    <script>
+        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        //      anchor.addEventListener('click', function (e){
+        //      e.preventDefault();
+        //      const target = document.querySelector(this.getAttribute('href'));
+        //      target.classList.add("mystyle");
+        //      console.log("hello ji")
+        //      });
+        // });
+
+     
+    //     function clickedLink(){
+    //     let desktopLink = document.getElementsByClassName("desktop-link");
+    //     desktopLink.classList.add('mystyle');
+    //     console.log('menu clicked');
+    //   }
+     
+//       const clickableElements = document.querySelectorAll('.abc ');
+//   // Loop through each clickable element and add onclick event
+//   clickableElements.forEach(element => {
+//     element.addEventListener('click', () => {
+//       // Toggle classes to change color
+//       element.classList.toggle('mystyle');
+//     });
+//   })
+
+
+const clickableElements = document.querySelectorAll('.abc');
+
+// Loop through each clickable element and add onclick event
+clickableElements.forEach(element => {
+    element.addEventListener('click', () => {
+        // Remove 'mystyle' class from all elements and remove 'nav-circle' class
+        clickableElements.forEach(el => {
+            el.classList.remove('mystyle');
+            el.classList.remove('nav-circle');
+        });
+        // Add 'mystyle' class to the clicked element
+        element.classList.add('mystyle');
+    });
+});
+
+
+    </script>
+
+    <script>
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    x.style.transition = "width 5s ease-in-out"
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+    </script>
+
+   <script>
+const themeToggle = document.getElementById('theme-toggle');
+const sections = document.querySelectorAll('#header, #main-box, #about, #services, #portfolio,#clients, #testimonial, #resume, #blog, #contact , #navigation'  );
+
+let darkMode = false;
+
+function toggleTheme() {
+    darkMode = !darkMode;
+
+    if (darkMode) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        sections.forEach(section => section.classList.add('dark-mode'));
+        document.getElementById('about').classList.add('red-bg');
+        document.getElementById('portfolio').classList.add('red-bg');
+        document.getElementById('services').classList.add('red-bg');
+        document.getElementById('testimonial').classList.add('red-bg');
+        document.getElementById('blog').classList.add('red-bg');
+        document.getElementById('clients').classList.add('red-bg');
+        document.getElementById('resume').classList.add('red-bg');
+        document.getElementById('contact').classList.add('red-bg');
+        document.getElementById('navigation').classList.add('red-bg');
+
+        themeToggle.textContent = 'Toggle Light Mode';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        sections.forEach(section => section.classList.remove('dark-mode'));
+        document.getElementById('about').classList.remove('red-bg');
+        document.getElementById('portfolio').classList.remove('red-bg');
+        document.getElementById('services').classList.remove('red-bg');
+        document.getElementById('testimonial').classList.remove('red-bg');
+        document.getElementById('blog').classList.remove('red-bg');
+        document.getElementById('clients').classList.remove('red-bg');
+        document.getElementById('resume').classList.remove('red-bg');
+        document.getElementById('contact').classList.remove('red-bg');
+        document.getElementById('navigation').classList.remove('red-bg');
+        themeToggle.textContent = 'Toggle Dark Mode';
+    }
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+
+   </script>
+</body>
+
+</html>

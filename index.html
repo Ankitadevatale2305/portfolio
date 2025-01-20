@@ -48,6 +48,11 @@
         }
     </script>
     <style>
+        a {
+    pointer-events: auto !important;
+    z-index: 1000 !important;
+     position: inherit !important; 
+}
         .stroke-text {
             /* color: black; */
             -webkit-text-fill-color: transparent;
@@ -244,7 +249,11 @@ body {
   animation-iteration-count: infinite;
   transition: all 0.1s ease 0s; 
 }
-
+i.ri-menu-3-line {
+    color: #fff;
+    position: relative;
+    top: 11px;
+}
 .text_1::after, .text_2::after {
   content: "|";
   position: absolute;
@@ -258,7 +267,13 @@ img.rounded-lg {
     height: 300px;
     object-fit: cover;
     object-position: top;
-    border: 1px groove;
+    border: 1px solid rgb(192, 191, 191);
+}
+.logo-img {
+    width: 251px;
+    height: 241px;
+    object-fit: cover;
+    object-position: top;
 }
 @keyframes text2 {
   0%, 50%, 100% {
@@ -290,8 +305,11 @@ img.rounded-lg {
 
 
 
-
-
+@meadia (min-width:766px)
+.header-wrapper{
+    display: flex;
+    flex-direction: row;
+}
 
 .about-name {
     position: absolute;
@@ -311,7 +329,7 @@ img.rounded-lg {
     top: 34%;
 }
 }
-@media(min-width:320) and (max-width:768){
+@media(min-width:320px) and (max-width:768px){
     .mystyle::after {
     content: "";
     background: transparent;
@@ -325,6 +343,20 @@ img.rounded-lg {
     display: inline-block;
     animation: rotateCircle 10s linear infinite;
     display: none;
+}
+.about-name {
+    position: absolute;
+    top: 57%;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border-radius: 2em;
+    backdrop-filter: blur(5px);
+    font-family: 'Roboto Mono';
+    padding: 0.5em 1em;
+    box-shadow: 0 8px 26px 0 rgba(22,24,26,0.11);
+    left: 58px;
+    font-size: 14px;
+    top: 240px;
 }
 }
 </style>
@@ -355,7 +387,7 @@ img.rounded-lg {
              </div>
              <div>
                 <!-- <button class="text-white font-roboto text-base pt-3  hover:underline" id="bg-dark" onclick="myFunctionTwo()">Dark version</button> -->
-                <button class="text-white font-roboto text-base mt-5 hover:underline" id="theme-toggle">Dark Mode</button>
+                <button class="text-white font-roboto text-base mt-5 hover:underline" id="theme-toggle"><i class="ri-toggle-fill"></i></button>
             </div>
           </div>
     </section>
@@ -374,7 +406,7 @@ img.rounded-lg {
                         <li><a href="" class="px-2 hover:underline">IN</a></li>
                     </ul>
                     <button onclick="myFunction()">
-                        <span class="menu-dots"></span>
+                        <span class="menu-dots"><i class="ri-menu-3-line"></i></span>
                     </button>
                 </div>
             </div>
@@ -410,30 +442,30 @@ img.rounded-lg {
                                 <span class="nav-circle"></span>
                             </a>
                         </li>
-                        <li class="lg:py-4 sm:py-1 sm:w-[12%] lg:w-[100%]  md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#testimonial">
+                        <!-- <li class="lg:py-4 sm:py-1 sm:w-[12%] lg:w-[100%]  md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#testimonial">
                                 <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">TESTIMONIAL</span>
                                 <span class="mobile-link lg:invisible md:invisible">T</span>
                                 <span class="nav-circle"></span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="lg:py-4 sm:py-1 sm:w-[12%] lg:w-[100%] md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#resume">
                                 <span class="desktop-link sm:invisible lg:visible md:visible  hover:text-white" onclick="clickedLink()">RESUME</span>
                                 <span class="mobile-link lg:invisible md:invisible">R</span>
                                 <span class=" nav-circle"></span>
                             </a>
                         </li>
-                        <li class="lg:py-4 sm:py-1  sm:w-[12%] lg:w-[100%] md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#clients">
+                        <!-- <li class="lg:py-4 sm:py-1  sm:w-[12%] lg:w-[100%] md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#clients">
                             <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">Client</span>
                             <span class="mobile-link lg:invisible md:invisible">C</span>
                             <span class=" nav-circle"></span>
                         </a>
-                    </li>
-                        <li class="lg:py-4 sm:py-1  sm:w-[12%] lg:w-[100%] md:w-[20%] sm:text-center lg:flex justify-between abc"><a href="#blog">
+                    </li> -->
+                        <!-- <li class="lg:py-4 sm:py-1  sm:w-[12%] lg:w-[100%] md:w-[20%] sm:text-center lg:flex justify-between abc"><a href="#blog">
                                 <span class="desktop-link sm:invisible lg:visible md:visible sm:invisible lg:visible md:visible hover:text-white " onclick="clickedLink()">BLOG</span>
                                 <span class="mobile-link lg:invisible md:invisible">B</span>
                                 <span class="nav-circle"></span>
                                 </a>
-                        </li>
+                        </li> -->
                         <li class="lg:py-4 sm:py-1 sm:w-[12%] lg:w-[100%] md:w-[20%]  sm:text-center lg:flex justify-between abc"><a href="#contact">
                                 <span class="desktop-link sm:invisible lg:visible md:visible hover:text-white" onclick="clickedLink()">CONTACT</span>
                                 <span class="mobile-link lg:invisible md:invisible">C</span>
@@ -442,7 +474,7 @@ img.rounded-lg {
                         </li>
                     </ul>
                   <div class="relative ">
-                    <p class="text-black font-bold absolute top-[20px]">HIRE ME</p>
+                    <p class="text-center font-bold absolute top-[20px]">HIRE ME</p>
                     <span class="relative flex h-3 w-3 top-[23px] left-[80px]">
                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -454,7 +486,7 @@ img.rounded-lg {
                     <div class="about-box bg-faint mb-8 rounded-lg shadow-lg   pb-10" id="about">
                         <div class="about-wrapper grid lg:grid-cols-7 px-8 py-8 relative">
                             <div class="about-image lg:col-span-2">
-                                <img src=" hero-avatar.jpg" alt="" class="rounded-full">
+                                <img src="ankita-img.jpeg" alt="" class="rounded-full logo-img">
                             </div>
                             <div class="about-name">
                                <span class="text_1">HI,THERE!_</span>
@@ -470,22 +502,33 @@ img.rounded-lg {
                                      <li class="p-[2px] sm:my-2">
                                             <span
                                                 class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
-                                                    class="ri-html5-fill "></i> HTML5 & CSS3 <span
-                                                    class="lg:text-base sm:text-[12px]"> (94%)</span></span>
+                                                    class="ri-html5-fill "></i> HTML5 & <i class="ri-css3-line"></i> CSS3 <span
+                                                    class="lg:text-base sm:text-[12px]"></span></span>
                                         </li>
                                         <li class="p-[2px] sm:my-2">
                                             <span
                                                 class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
                                                     class="ri-bootstrap-fill "></i> Bootstrap <span
-                                                    class="lg:text-base sm:text-[12px]" > (94%)</span></span>
+                                                    class="lg:text-base sm:text-[12px]" ></span></span>
                                         </li>
                                         <li class="p-[2px] sm:my-2">
                                             <span
                                                 class="lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i
-                                                    class="ri-search-line "></i> SEO <span
-                                                    class="lg:text-base sm:text-[12px]" > (94%)</span></span>
+                                                    class="ri-javascript-fill"></i>javascript<span
+                                                    class="lg:text-base sm:text-[12px]" ></span></span>
                                         </li>
                                     </ul>
+                                    <ul class="sm:flex-col lg:flex lg:flex-row  md:flex md:flex-row  pt-2 sm:pt-2">
+                                        <li class="p-[2px] sm:my-2">
+                                               <span class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i class="ri-window-line"></i> Wordpress Development <span class="lg:text-base sm:text-[12px]"></span></span>
+                                           </li>
+                                           <li class="p-[2px] sm:my-2">
+                                               <span class=" lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i class="ri-reactjs-line"></i> React Js <span class="lg:text-base sm:text-[12px]"></span></span>
+                                           </li>
+                                           <li class="p-[2px] sm:my-2">
+                                               <span class="lg:text-lg sm:text-[12px] border border-dashed border-inherit px-2 py-2 rounded-[32px] font-sans "><i class="ri-tailwind-css-line "></i> Tailwind <span class="lg:text-base sm:text-[12px]"></span></span>
+                                           </li>
+                                       </ul>
                                     <p class=" mt-5 text-lg font-sans">Passionate frontend developer specializing in creating responsive, user-friendly interfaces with modern frameworks and clean code</p>
                                 </div>
 
@@ -547,17 +590,17 @@ img.rounded-lg {
                                 <div id="tab-1" class="tab-content current">
                                     <div class="img-gallery flex lg:flex-row sm:flex-col gap-4">
                                         <div class="img-box-1 relative group">
-                                           <a href="https://leadvips.com"><img src="leadvips.png" alt="" class="rounded-lg"></a>
-                                            <a href="default.asp"><img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"></a>
+                                           <a href="https://leadvips.com" target="_blank"><img src="leadvips.png" alt="" class="rounded-lg"></a>
+                                           
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out ">
                                                 <p
                                                     class="img-overlay-text py-8 px-5 text-4xl  font-bold stroke-text-three">
-                                                    Glasses Of <br>Cocktail</p>
+                                                    leadvips.com</p>
                                             </div>
                                         </div>
                                         <div class="img-box-1 relative group">
-                                            <img src="ajriheavyengineering.png " alt="" class="rounded-lg">
+                                           <a href="https://ajriheavyengineering.infinityfreeapp.com/" target="_blank"> <img src="ajriheavyengineering.png " alt="" class="rounded-lg"></a>
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -571,7 +614,9 @@ img.rounded-lg {
                                     </div>
                                     <div class="img-gallery flex sm:flex-col lg:flex-row gap-4 mt-4">
                                         <div class="img-box-1 relative group">
-                                            <img src="buyersrescue.png" alt="" class="rounded-lg">
+                                            <a href="https://www.buyersagentrescue.com.au/" target="_blank">
+                                                <img src="buyersrescue.png" alt="" class="rounded-lg">
+                                            </a>
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -580,7 +625,9 @@ img.rounded-lg {
                                             </div>
                                         </div>
                                         <div class="img-box-1 relative group">
+                                            <a href="https://rinagolan.co/" target="_blank">
                                             <img src="rinagolan.png" alt="" class="rounded-lg">
+                                        </a>
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -595,7 +642,10 @@ img.rounded-lg {
                                 <div id="tab-2" class="tab-content">
                                     <div class="img-gallery flex sm:flex-col lg:flex-row gap-4">
                                         <div class="img-box-1 relative group">
-                                            <img src=" portfolio-2.jpg" alt="" class="rounded-lg">
+                                            <a href="https://rinagolan.co/">
+                                                <img src="rinagolan.png" alt="" class="rounded-lg">
+                                            </a>
+
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -604,7 +654,9 @@ img.rounded-lg {
                                             </div>
                                         </div>
                                         <div class="img-box-1 relative group">
-                                            <img src=" portfolio-4.jpg" alt="" class="rounded-lg">
+                                            <a href="https://www.buyersagentrescue.com.au/">
+                                                <img src="buyersrescue.png" alt="" class="rounded-lg">
+                                            </a>
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -618,7 +670,8 @@ img.rounded-lg {
                                 <div id="tab-3" class="tab-content">
                                     <div class="img-gallery flex sm:flex-col lg:flex-row gap-4">
                                         <div class="img-box-1 relative group">
-                                            <img src=" portfolio-2.jpg" alt="" class="rounded-lg">
+                                            <a href="https://ajriheavyengineering.infinityfreeapp.com/" target="_blank"> <img src="ajriheavyengineering.png " alt="" class="rounded-lg"></a>
+
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -628,7 +681,8 @@ img.rounded-lg {
 
                                         </div>
                                         <div class="img-box-1 relative group">
-                                            <img src=" portfolio-3.jpg" alt="" class="rounded-lg">
+                                            <a href="https://leadvips.com/" target="_blank"> <img src="leadvips.png" alt="" class="rounded-lg"></a>
+
                                             <div
                                                 class="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                                                 <p
@@ -640,7 +694,11 @@ img.rounded-lg {
 
                                     </div>
                                 </div>
-
+                                <div class="items-center text-center">
+                                <button class="text-center bg-black text-white mt-5 p-3 font-roboto rounded-md">Download Resume
+  <a href="https://raw.githubusercontent.com/Ankitadevatale2305/myresume/main/Ankita%20Devatale%20updated.pdf" download="Ankita_Devatale.pdf"></a>
+                                    
+                                    </div>
                             </div>
 
                         </div>
@@ -656,9 +714,7 @@ img.rounded-lg {
                                         SERVICES</p>
                                     <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">What I Do</h1>
 
-                                    <p class="mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua</p>
+                                    <p class="mt-5 text-lg font-sans">As a passionate and dedicated student with 2 years of experience in WordPress development, I specialize in crafting professional, responsive websites that deliver both functionality and style. Here’s how I can help:</p>
                                 </div>
 
                             </div>
@@ -673,15 +729,14 @@ img.rounded-lg {
                                             <p class="plus-text"><i class="ri-code-s-slash-line text-2xl"></i></p>
                                             <p
                                                 class="font-roboto uppercase font-medium  text-sm tracking-wider">
-                                                WEB & MOBILE DEVELOPMENT</p>
+                                                WordPress Website Development</p>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="service-content-box-1 col-span-4">
-                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna</p>
+                                    <p class=" mt-5 text-lg font-sans">Building websites that work for you.
+                                      functional business websites, I design and develop WordPress sites that are responsive, secure, and tailored to meet your needs.</p>
                                 </div>
 
 
@@ -698,15 +753,14 @@ img.rounded-lg {
                                             <p class="plus-text"><i class="ri-tv-2-line text-2xl"></i></p>
                                             <p
                                                 class="font-roboto uppercase font-medium  text-sm tracking-wider">
-                                                DIGITAL MARKETING</p>
+                                                Website Customization</p>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="service-content-box-1 col-span-4">
-                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna </p>
+                                    <p class=" mt-5 text-lg font-sans">Making templates your own.
+                                        I bring your vision to life by customizing WordPress themes and plugins, ensuring your site reflects your brand’s unique identity. </p>
                                 </div>
 
 
@@ -723,15 +777,14 @@ img.rounded-lg {
                                             <p class="plus-text"><i class="ri-settings-5-line text-2xl"></i></p>
                                             <p
                                                 class="font-roboto uppercase font-medium  text-sm tracking-wider">
-                                                BRANDING & STRATEGY</p>
+                                                E-commerce Solutions</p>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="service-content-box-1 col-span-4">
-                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna</p>
+                                    <p class=" mt-5 text-lg font-sans">Turning your ideas into online stores.
+                                        I create user-friendly and scalable WooCommerce websites that make it easy to manage your products, payments, and customers.</p>
                                 </div>
 
 
@@ -748,15 +801,14 @@ img.rounded-lg {
                                             <p class="plus-text"><i class="ri-user-line text-2xl"></i></p>
                                             <p
                                                 class="font-roboto uppercase font-medium  text-sm tracking-wider">
-                                                USER TESTING & PERSONAS</p>
+                                                Website Maintenance & Support</p>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="service-content-box-1 col-span-4">
-                                    <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna</p>
+                                    <p class=" mt-5 text-lg font-sans">Keeping your site running smoothly.
+                                        Whether it’s updating plugins, fixing bugs, or optimizing performance, I provide ongoing support to ensure your website stays up-to-date and secure.</p>
                                 </div>
 
 
@@ -767,7 +819,7 @@ img.rounded-lg {
                     </div>
 
 
-                    <div class="testimonial-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="testimonial">
+                    <!-- <div class="testimonial-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="testimonial">
                         <div class="about-wrapper  px-8 py-8">
                             <div class="about-content">
                                 <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
@@ -876,7 +928,7 @@ img.rounded-lg {
                         </div>
 
 
-                    </div>
+                    </div> -->
 
 
                     <div class="Resume-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="resume">
@@ -887,7 +939,7 @@ img.rounded-lg {
                                     <p class="font-roboto font-medium uppercase text-sm mt-[-23px] tracking-wider">//
                                         RESUME</p>
                                     <h1 class="font-semibold sm:text-2xl lg:text-[40px] leading-tight font-poppins pt-4 ">Education &
-                                        Experience</h1>
+                                        Experience  </h1>
 
                                     <p class=" mt-5 text-lg font-sans">Lorem ipsum dolor sit amet,
                                         consectetur adipisicing elit, sed do eiusmod
@@ -903,11 +955,18 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Bachelor
-                                                            Degree of Business</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                           01-Nov-2022 - 27-Nov-2024 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Wordpress Developer</h5>
+                                                        <p class="font-roboto uppercase font-medium  text-sm tracking-wider underline decoration-2 ">Company Name : </p>
+                                                        <p class="text-base font-sans">Walstar Technology Pvt.Ltd</p>
+                                                        <p class="font-roboto uppercase font-medium  text-sm tracking-wider pt-2 underline decoration-2 ">Projects : </p>
+                                                        <ul class="list-disc pl-4">
+                                                            <li>E-commerce Store Development</li>
+                                                            <li>Integrated custom post type </li>
+                                                            <li>Website Migration and Upgrades</li>
+                                                            <li>Customization Plugins and Themes</li>
+                                                            <li>Website Optimization</li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="degree-box mb-8 relative">
@@ -915,11 +974,16 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Master
-                                                            Degree of Design</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                           11-Oct-2021 -11-April-2022 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Web Application Developer</h5>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wider underline decoration-2 ">Company Name : </p>
+                                                            <p class="text-base font-sans">Antsglobe Technology LLP</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wider pt-2 underline decoration-2 ">Projects : </p>
+                                                            <ul class="list-disc pl-4">
+                                                                <li>Developed frontend components for Restro ERP Live Project</li>
+                                                                <li>Designed and implementedseveral moduleswithin the project, contributingtoitsoverallfunctionality and user interface</li>
+                                                            
+                                                            </ul>
                                                     </div>
                                                 </div>
                                                 <div class="degree-box relative">
@@ -927,11 +991,16 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Bachelor
-                                                            Degree of Business</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                            04-Jan-2021 - 04-April-2021 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Web Developer</h5>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wider underline decoration-2 ">Company Name : </p>
+                                                            <p class="text-base font-sans">PSPM Technology Pvt.Ltd</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wider pt-2 underline decoration-2 ">Projects : </p>
+                                                            <ul class="list-disc pl-4">
+                                                                <li>Managed ERP project implementation and oversight.</li>
+                                                                <li>Created websites using HTML, CSS, andJavaScript for functionality anddesign.</li>
+                                                                <li>Administered website maintenance and updates to ensure performance and user satisfaction.</li>
+                                                            </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -947,11 +1016,14 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Director
-                                                            of Operations</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                            Aug-2018 - June-2021 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Master Of Computer Application</h5>
+                                                        <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">University :</p>
+                                                        <p class="text-base font-sans ">@ Savitaribai Phule Pune University</p>
+                                                        <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">College :</p>
+                                                        <p class="text-base font-sans ">@ Jaiwantrao Sawant College Of Engineering Hadapsar Pune</p>
+                                                        <p class="font-roboto uppercase font-medium  text-sm tracking-wide   underline decoration-2">CGPA : 9.520</p>
+
                                                     </div>
                                                 </div>
                                                 <div class="degree-box mb-8 relative">
@@ -959,11 +1031,14 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Senior
-                                                            Designer</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                            June-2015 - 2018 </span>
+                                                            <h5 class="font-medium font-poppins text-xl mb-2 mt-5">Bachleor's Of Computer Application</h5>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">University :</p>
+                                                            <p class="text-base font-sans ">@ Sant Gadge Baba Amravati University</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">College :</p>
+                                                            <p class="text-base font-sans ">@ Vidya Bhavan College Of Management and Research</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide   underline decoration-2">Percentage : 60%</p>
+                                                      
                                                     </div>
                                                 </div>
                                                 <div class="degree-box relative">
@@ -971,11 +1046,23 @@ img.rounded-lg {
                                                     <div class="cap-content-box">
                                                         <span
                                                             class="  text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
-                                                            2020 - 2023 </span>
-                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">UI & UX
-                                                            Designer</h5>
-                                                        <p class="text-base font-sans  mt-2">@ University
-                                                            of Business</p>
+                                                            June-2014 - June-2015 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">HSC</h5>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">College :</p>
+                                                            <p class="text-base font-sans ">@ Loknayak Bapuji Aney Vidyalay, Yavatmal</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide  mb-3.5 underline decoration-2">Percentage : 52.31%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="degree-box relative">
+
+                                                    <div class="cap-content-box">
+                                                        <span
+                                                            class=" text-[14px] border border-dashed border-inherit mb-3.5 px-5 py-2 rounded-[32px] font-roboto">
+                                                            June-2012 - June-2013 </span>
+                                                        <h5 class="font-medium font-poppins text-xl mb-2 mt-5">SSC</h5>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide  underline decoration-2 ">College :</p>
+                                                            <p class="text-base font-sans ">@ Abhyankar Kanya School, Yavatmal</p>
+                                                            <p class="font-roboto uppercase font-medium  text-sm tracking-wide   underline decoration-2">Percentage : 65.91%</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -989,7 +1076,7 @@ img.rounded-lg {
 
                     </div>
 
-                    <div class="client-logo-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="clients">
+                    <!-- <div class="client-logo-box bg-faint  mb-8 rounded-lg shadow-lg  pb-10" id="clients">
                         <div class="about-wrapper  px-8 py-8">
                             <div class="about-content">
                                 <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
@@ -1030,9 +1117,9 @@ img.rounded-lg {
                         </div>
 
 
-                    </div>
+                    </div> -->
 
-                    <div class="blog-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="blog">
+                    <!-- <div class="blog-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="blog">
                         <div class="about-wrapper  px-8 py-8">
                             <div class="about-content">
                                 <div class="about-content-wrapper sm:pt-5 lg:pl-0 sm:pl-0">
@@ -1098,7 +1185,7 @@ img.rounded-lg {
                         </div>
 
 
-                    </div>
+                    </div> -->
 
                     <div class="contact-box bg-faint mb-8 rounded-lg shadow-lg  pb-10" id="contact">
                         <div class="about-wrapper  px-8 py-8">
@@ -1115,15 +1202,15 @@ img.rounded-lg {
                                         <ul class=" pt-4 mb-8">
                                             <li class="p-[2px] mb-5">
                                                 <span
-                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Phone: +976 12 34 99 99</span>
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Phone: +91 8605217978</span>
                                             </li>
                                             <li class="p-[2px] mb-5">
                                                 <span
-                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "></i> Email: flatheme@gmail.com</span>
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "></i> Email: ankitadevatale5@gmail.com</span>
                                             </li>
                                             <li class="p-[2px] mb-5">
                                                 <span
-                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Address: 121 King St, Melbourne VIC 3000 </span>
+                                                    class=" lg:text-lg sm:text-base border border-dashed border-inherit px-5 py-2 rounded-[32px] font-sans "> Address: Yashodeep Chowk, Morya Colony, Warje Malvadi, Pune 411058 </span>
                                             </li>
                                         </ul>
                                         <div class="contact-form mt-9">
@@ -1159,6 +1246,8 @@ img.rounded-lg {
                     </div>
                     <div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d60542.616744957035!2d73.75502626497!3d18.487574826761726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m3!3m2!1d18.4875793!2d73.7963116!4m0!5e0!3m2!1sen!2sin!4v1713955229240!5m2!1sen!2sin" width="100%" height="350" class="mb-9 rounded-lg shadow-lg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                    
                     </div>
                 </div>
             </div>
@@ -1263,30 +1352,23 @@ img.rounded-lg {
     </script>
 
     <script>
-        // Smooth scrolling to anchor links with custom offset
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevents the default behavior of link click
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { // Check if the target exists
+            e.preventDefault(); // Only prevent default for valid anchors
 
-                // Get the target section based on the href attribute
-                const target = document.querySelector(this.getAttribute('href'));
+            const offset = 20;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
 
-                // Define the offset for the top margin
-                const offset = 20;
-
-
-                // Calculate the target position (top position relative to the viewport)
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-
-                // Scroll to the target position with the desired offset
-                window.scrollTo({
-                    top: targetPosition - offset,
-                    behavior: 'smooth' // Enable smooth scrolling behavior
-                });
+            window.scrollTo({
+                top: targetPosition - offset,
+                behavior: 'smooth'
             });
-        });
-    </script>
-    <script>
+        }
+    });
+});
+
         // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         //      anchor.addEventListener('click', function (e){
         //      e.preventDefault();
@@ -1334,13 +1416,15 @@ clickableElements.forEach(element => {
     <script>
 
 function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    x.style.transition = "width 5s ease-in-out"
-  } else {
-    x.style.display = "none";
-  }
+    const x = document.getElementById("myDIV");
+    if (x.style.opacity === "0" || x.style.display === "none") {
+        x.style.display = "block";
+        x.style.opacity = "1";
+        x.style.transition = "opacity 0.5s ease-in-out";
+    } else {
+        x.style.opacity = "0";
+        setTimeout(() => (x.style.display = "none"), 500); // Delay hiding for the transition
+    }
 }
 
 
@@ -1349,7 +1433,7 @@ function myFunction() {
 
    <script>
 const themeToggle = document.getElementById('theme-toggle');
-const sections = document.querySelectorAll('#header, #main-box, #about, #services, #portfolio,#clients, #testimonial, #resume, #blog, #contact , #navigation'  );
+const sections = document.querySelectorAll('#header, #main-box, #about, #services, #portfolio, #clients, #testimonial, #resume, #blog, #contact , #navigation '  );
 
 let darkMode = false;
 
@@ -1360,26 +1444,27 @@ function toggleTheme() {
         document.documentElement.setAttribute('data-theme', 'dark');
         sections.forEach(section => section.classList.add('dark-mode'));
         document.getElementById('about').classList.add('red-bg');
+        document.getElementById('resume').classList.add('red-bg');
         document.getElementById('portfolio').classList.add('red-bg');
         document.getElementById('services').classList.add('red-bg');
         document.getElementById('testimonial').classList.add('red-bg');
         document.getElementById('blog').classList.add('red-bg');
         document.getElementById('clients').classList.add('red-bg');
-        document.getElementById('resume').classList.add('red-bg');
         document.getElementById('contact').classList.add('red-bg');
         document.getElementById('navigation').classList.add('red-bg');
+        
 
         themeToggle.textContent = 'Toggle Light Mode';
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         sections.forEach(section => section.classList.remove('dark-mode'));
         document.getElementById('about').classList.remove('red-bg');
+        document.getElementById('resume').classList.remove('red-bg');
         document.getElementById('portfolio').classList.remove('red-bg');
         document.getElementById('services').classList.remove('red-bg');
         document.getElementById('testimonial').classList.remove('red-bg');
         document.getElementById('blog').classList.remove('red-bg');
         document.getElementById('clients').classList.remove('red-bg');
-        document.getElementById('resume').classList.remove('red-bg');
         document.getElementById('contact').classList.remove('red-bg');
         document.getElementById('navigation').classList.remove('red-bg');
         themeToggle.textContent = 'Toggle Dark Mode';
